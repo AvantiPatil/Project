@@ -1,10 +1,11 @@
-
+<div class="div">
+<div class="bg">
 <form [formGroup]="Patientobj.formPatientGroup"> <br><br>
 
       <!-- Patient ID: <input [ngModelOptions]="{standalone: true}"
       [(ngModel)]="Patientobj.id" type="text" value=""/><br> -->
-
-      Patient Name:<input type="text" 
+<div style="text-align:center">
+    Patient Name:<input type="text" 
                           formControlName="namecontrol" 
                           [(ngModel)]="Patientobj.name" 
                           value=""/><br>
@@ -34,10 +35,12 @@
       <input type="submit" [disabled]="!(Patientobj.formPatientGroup.valid)"
                           value="submit" 
                           (click)="Submit()" /><br /><br /><br />
+                        </div>
 </form>
-  
+</div>
+
   <br><br>
-  <table>
+  <table class="src" align="center" border="1">
       <tr>
           <th>PATIENT ID</th>
           <th>PATIENT NAME</th>
@@ -49,6 +52,8 @@
               <td>{{C.problemDescription}}</td>
          </tr>
     </table>
+
+</div>
   
   
   

@@ -1,0 +1,18 @@
+.bg{
+    
+    background: cover;
+    height: 500px;
+    text-align: center;
+    padding: 50px;
+    color:black;
+}
+.src{
+    
+    height: 100px;
+    text-align: center;
+    font: italic;
+    font-size: 20px;
+    
+
+
+}

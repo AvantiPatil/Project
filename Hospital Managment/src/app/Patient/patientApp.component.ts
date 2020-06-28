@@ -5,6 +5,7 @@ import { PatientModel} from './patientApp.Model'
 @Component({
   selector: 'app-root',
   templateUrl: './patientApp.component.html',
+  styleUrls: ['./patientApp.Patient.css']
   
 })
 export class PatientComponent {
