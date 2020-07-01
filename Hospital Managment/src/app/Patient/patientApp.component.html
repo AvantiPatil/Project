@@ -4,18 +4,18 @@
 
       <!-- Patient ID: <input [ngModelOptions]="{standalone: true}"
       [(ngModel)]="Patientobj.id" type="text" value=""/><br> -->
-<div style="text-align:center">
+<div style="text-align:center; font-weight:bold;">
     Patient Name:<input type="text" 
                           formControlName="namecontrol" 
                           [(ngModel)]="Patientobj.name" 
                           value=""/><br>
       
       
-      <div [hidden]="!(Patientobj.formPatientGroup
+      <div style="color: red; font-weight: lighter;" [hidden]="!(Patientobj.formPatientGroup
                       .controls['namecontrol']
                     .hasError('required'))">
                     
-        Patient Name is required
+        !Patient Name is required
       </div><br><br>
       
       Problem Description:<input type="text"
@@ -24,11 +24,11 @@
                                  value=""/><br>
     
     
-      <div [hidden]="!(Patientobj.formPatientGroup
+      <div  style="color: red; font-weight: lighter;"[hidden]="!(Patientobj.formPatientGroup
                     .controls['problemdesccontrol']
                     .hasError('required'))">
                                 
-          Patient Problem is required
+          !Patient Problem is required
       </div><br><br>
 
 
