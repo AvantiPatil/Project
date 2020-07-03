@@ -7,15 +7,18 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './Home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './app.Logincomponent';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
+    LoginComponent,
     MasterPageComponent,
     
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(PatientHomeRoutes),
