@@ -8,6 +8,8 @@ import { HomeComponent } from './Home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './app.Logincomponent';
+import { LoginModel } from './app.LoginModel';
+import { SecurityLogic } from '../Utility/Utility.Authguard';
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { LoginComponent } from './app.Logincomponent';
    
    
   ],
-  providers: [],
+  providers: [LoginModel, SecurityLogic],
   bootstrap: [MasterPageComponent]
 })
 export class HomeModule {

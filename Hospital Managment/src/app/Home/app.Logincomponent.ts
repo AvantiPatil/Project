@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { LoginModel } from './app.LoginModel';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,10 +11,12 @@ import { LoginModel } from './app.LoginModel';
   
 })
 export class LoginComponent {
-  Loginobj:LoginModel= new LoginModel();
+  //Loginobj:LoginModel= new LoginModel();
 
-  constructor(public http:HttpClient){
-
+  constructor(public http:HttpClient ,
+     public Loginobj:LoginModel,
+    public routing:Router){
+   
  }
   SignIn()
   {
@@ -23,7 +26,8 @@ export class LoginComponent {
       .subscribe(res=>this.success(res), res=>this.error(res));
   }
   success(res){
-     alert(res.token); 
+     this.Loginobj.token = res.token;
+     this.routing.navigate(["Home"]);
   }
   error(res){
 
