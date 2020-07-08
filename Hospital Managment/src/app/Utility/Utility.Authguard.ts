@@ -4,10 +4,11 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { Observable } from 'rxjs';
 import { LoginModel } from '../Home/app.LoginModel';
 
+
 @Injectable()
 export class SecurityLogic implements CanActivate {
 
-    constructor(private _router:Router, public _LoginModel:LoginModel){
+    constructor(private _router:Router, public _user:LoginModel){
 
     }
 
@@ -15,7 +16,7 @@ export class SecurityLogic implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
       ): Observable<boolean> | Promise<boolean> | boolean{
-       if(this._LoginModel.token.length !=0){
+       if(this._user.token.length !=0){
            return true; //navigation allow
        }
 

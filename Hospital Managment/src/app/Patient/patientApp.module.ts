@@ -4,8 +4,10 @@ import { PatientRoutes } from '../Routes/patientRoutes';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PatientComponent } from './patientApp.component';
+import { JWTInterceptor } from '../Utility/Utility.Interceptor';
+
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { PatientComponent } from './patientApp.component';
     HttpClientModule
    
   ],
-  providers: [],
+  providers: [ {provide:HTTP_INTERCEPTORS, useClass:JWTInterceptor,multi:true}],
   bootstrap: [PatientComponent]
 })
 export class PatientModule {

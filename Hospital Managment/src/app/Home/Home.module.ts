@@ -6,10 +6,12 @@ import { MasterPageComponent} from './app.Masterpagecomponent';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './Home.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './app.Logincomponent';
 import { LoginModel } from './app.LoginModel';
 import { SecurityLogic } from '../Utility/Utility.Authguard';
+import { JWTInterceptor } from '../Utility/Utility.Interceptor';
+
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { SecurityLogic } from '../Utility/Utility.Authguard';
    
    
   ],
-  providers: [LoginModel, SecurityLogic],
+  providers: [LoginModel, SecurityLogic,
+  {provide:HTTP_INTERCEPTORS, useClass:JWTInterceptor,multi:true}],
   bootstrap: [MasterPageComponent]
 })
 export class HomeModule {
