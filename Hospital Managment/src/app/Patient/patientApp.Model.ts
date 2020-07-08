@@ -7,7 +7,9 @@ import { NgForm,
 export class PatientModel{
     id:number=0;
     name:string = "";
-    problemDescription:string = "";
+    patientProblems:Array<patientProblem>=new Array<patientProblem>();
+
+    
    // step 1 create object of formgroup
    formPatientGroup:FormGroup = null;
 
@@ -23,4 +25,8 @@ export class PatientModel{
         this.formPatientGroup.addControl("problemdesccontrol",
             new FormControl('',Validators.required));
    }
+}
+export class patientProblem{
+    id:number=0;
+    patientProblem:string = "";
 }

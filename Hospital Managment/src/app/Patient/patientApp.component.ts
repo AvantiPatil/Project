@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { PatientModel} from './patientApp.Model'
+import { PatientModel, patientProblem} from './patientApp.Model'
 
 @Component({
   selector: 'app-root',
@@ -11,18 +11,23 @@ import { PatientModel} from './patientApp.Model'
 export class PatientComponent {
   
   Patientobj:PatientModel= null;
+  patientProblem:patientProblem=new patientProblem();
   Patientobjs:Array<PatientModel> = new Array<PatientModel>();
   
       constructor(private Http:HttpClient){
       this.Patientobj=new PatientModel();
       }
+      AddProblem(){
+        this.Patientobj.patientProblems.push(this.patientProblem);
+        this.patientProblem= new patientProblem();
+    }
       
       Submit(){
 
         let patientDetail={
           id:this.Patientobj.id,
           name: this.Patientobj.name,
-          problemDescription:this.Patientobj.problemDescription
+          problemDescription:this.Patientobj.patientProblems
         }
         // var obj:any ={};
         // obj.id=this.Patientobj.id;
