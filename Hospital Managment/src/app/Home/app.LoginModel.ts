@@ -1,5 +1,5 @@
 export class LoginModel{
-    userName:string="";
-    password:string="";
+    userName:string="Avanti";
+    password:string="ABC@00";
     token:string="";
 }

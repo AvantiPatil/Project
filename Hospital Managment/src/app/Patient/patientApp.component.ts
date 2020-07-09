@@ -24,17 +24,19 @@ export class PatientComponent {
       
       Submit(){
 
-        let patientDetail={
-          id:this.Patientobj.id,
-          name: this.Patientobj.name,
-          problemDescription:this.Patientobj.patientProblems
-        }
-        // var obj:any ={};
-        // obj.id=this.Patientobj.id;
-        // obj.name=this.Patientobj.name;
-        // obj.problemDescription=this.Patientobj.problemDescription;
+        //let patientDetail={
+          //id:this.Patientobj.id,
+          //name: this.Patientobj.name,
+          //patientDetail.problems=[];
+          //problemDescription:this.Patientobj.patientProblems
+        //}
+         var obj:any ={};
+         obj.id=this.Patientobj.id;
+         obj.name=this.Patientobj.name;
+         obj.problems = [];
+         obj.problems=this.Patientobj.patientProblems;
         
-        this.Http.post("https://localhost:44316/api/PatientAPI" , patientDetail)
+        this.Http.post("https://localhost:44316/api/PatientAPI" , obj)
         .subscribe(res => this.success(res),
         res => this.Error(res));
       
