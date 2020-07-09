@@ -28,5 +28,5 @@ export class PatientModel{
 }
 export class patientProblem{
     id:number=0;
-    patientProblem:string = "";
+    problemDescription:string = "";
 }
